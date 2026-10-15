@@ -130,3 +130,14 @@ adb shell pm get-app-links com.sayuti.deeplinknavigationlab
 ## Project Status
 
 Developed as a hands-on Android learning project covering deep links, navigation, Firebase Hosting, and release signing.
+
+## Screenshots
+
+### Home Screen
+![Home Screen](screenshots/home.png)
+
+### Product Screen — Deep Link
+![Product Screen](screenshots/product-deeplink.png)
+
+### Notification Navigation
+![Notification Navigation](screenshots/notification.png)
