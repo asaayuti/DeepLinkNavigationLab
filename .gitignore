@@ -1,0 +1,29 @@
+# Android Studio
+*.iml
+.idea/
+.DS_Store
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Gradle and build outputs
+.gradle/
+**/build/
+build/
+
+# Signing credentials
+keystore.properties
+*.jks
+*.keystore
+
+# Generated release artifacts
+/app/release/
+
+# Firebase local state
+.firebase/
+
+# Local AI coding tools
+.agents/
+.claude/
+skills-lock.json

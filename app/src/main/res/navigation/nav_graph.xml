@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.sayuti.deeplinknavigationlab.HomeFragment"
+        android:label="Home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.sayuti.deeplinknavigationlab.ProductFragment"
+        android:label="Product Detail" >
+
+        <argument
+            android:name="productId"
+            app:argType="string" />
+
+        <argument
+            android:name="source"
+            app:argType="string"
+            android:defaultValue="unknown" />
+
+        <deepLink app:uri="myapp://product/{productId}?source={source}" />
+        <deepLink app:uri="https://deeplinknavigationlab.web.app/product/{productId}?source={source}" />
+
+        <action
+            android:id="@+id/action_productFragment_self"
+            app:destination="@id/productFragment" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,16 @@
+
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.sayuti.deeplinknavigationlab",
+      "sha256_cert_fingerprints": [
+        "AD:8D:4D:50:22:76:7A:96:CA:05:15:05:E9:ED:CA:01:95:31:8A:D5:7C:DD:F0:FA:F6:0B:F1:EC:E2:07:32:1A",
+	"99:B8:20:23:D4:00:20:FC:B3:D0:54:97:80:8A:31:2D:31:83:53:56:50:69:9E:3A:67:CF:05:65:62:7C:05:BD"
+      ]
+    }
+  }
+]

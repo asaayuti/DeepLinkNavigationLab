@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep Link Lab — Products</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 32px 20px;
+      font-family: Arial, sans-serif;
+      color: #202124;
+      background: #f5f7fb;
+    }
+
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+    }
+
+    .description {
+      color: #5f6368;
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+
+    .product {
+      background: white;
+      padding: 20px;
+      margin-bottom: 16px;
+      border: 1px solid #e0e3e7;
+      border-radius: 12px;
+    }
+
+    .product h2 {
+      margin-top: 0;
+    }
+
+    .product a {
+      display: inline-block;
+      padding: 12px 16px;
+      color: white;
+      background: #1967d2;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .product a:hover {
+      background: #174ea6;
+    }
+
+    code {
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Product Catalog</h1>
+    <p class="description">
+      Deep Link Navigation Lab — pilih produk untuk membuka
+      halaman detail di aplikasi Android.
+    </p>
+
+    <section class="product">
+      <h2>Product 123</h2>
+      <p>ID produk: 123</p>
+      <a href="https://deeplinknavigationlab.web.app/product/123?source=browser">
+        Open Product 123
+      </a>
+    </section>
+
+    <section class="product">
+      <h2>Product 456</h2>
+      <p>ID produk: 456</p>
+      <a href="https://deeplinknavigationlab.web.app/product/456?source=browser">
+        Open Product 456
+      </a>
+    </section>
+  </main>
+
+<script>
+  const main = document.querySelector("main");
+
+  const match = window.location.pathname.match(
+    /^\/product\/([^/]+)\/?$/
+  );
+
+  if (match) {
+    let productId;
+
+    try {
+      productId = decodeURIComponent(match[1]);
+    } catch {
+      productId = "";
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    let source = params.get("source") || "unknown";
+
+    const allowedSources = [
+      "browser",
+      "notification",
+      "promo",
+      "custom-scheme",
+      "in-app",
+      "unknown"
+    ];
+
+    if (!allowedSources.includes(source)) {
+      source = "unknown";
+    }
+
+    const section = document.createElement("section");
+    section.className = "product";
+
+    const heading = document.createElement("h1");
+    const detail = document.createElement("p");
+    const sourceInfo = document.createElement("p");
+    const backLink = document.createElement("a");
+
+    if (/^\d+$/.test(productId)) {
+      heading.textContent = "Product Detail";
+      detail.textContent = `Product ID: ${productId}`;
+      sourceInfo.textContent = `Source: ${source}`;
+    } else {
+      heading.textContent = "Invalid Product";
+      detail.textContent = "ID produk tidak valid.";
+      sourceInfo.textContent = "";
+    }
+
+    backLink.href = "/";
+    backLink.textContent = "Kembali ke katalog";
+
+    section.append(heading, detail, sourceInfo, backLink);
+    main.replaceChildren(section);
+  }
+</script>
+</body>
+</html>
