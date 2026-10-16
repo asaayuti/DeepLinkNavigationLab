@@ -1,4 +1,5 @@
 # DeepLinkNavigationLab
+[![Android CI](https://github.com/asaayuti/DeepLinkNavigationLab/actions/workflows/android-build.yml/badge.svg)](https://github.com/asaayuti/DeepLinkNavigationLab/actions/workflows/android-build.yml)
 
 An Android project exploring deep links, Android App Links, navigation behavior, Firebase Hosting, and release signing.
 
