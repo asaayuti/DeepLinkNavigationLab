@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Product Detail Page"
+        android:text="@string/product_detail_page"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Product ID: -"
+        android:text="@string/product_id_placeholder"
         android:textSize="18sp" />
 
     <TextView
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Source: -"
+        android:text="@string/source_placeholder"
         android:textSize="18sp" />
 
     <Button
@@ -35,13 +35,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Kembali ke Home" />
+        android:text="@string/back_to_home" />
 
     <Button
         android:id="@+id/btnOpenSecondProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Open Product 222"
+        android:text="@string/open_product_222"
         android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

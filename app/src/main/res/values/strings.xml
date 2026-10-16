@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">DeepLinkNavigationLab</string>
+    <string name="home_page">Home Page</string>
+    <string name="open_product_detail">Buka Detail Produk</string>
+    <string name="test_product_notification">Test Product Notification</string>
+    <string name="product_detail_page">Product Detail Page</string>
+    <string name="product_id_placeholder">Product ID: -</string>
+    <string name="source_placeholder">Source: -</string>
+    <string name="back_to_home">Kembali ke Home</string>
+    <string name="open_product_222">Open Product 222</string>
+
+    <string name="product_id_format">Product ID: %1$s</string>
+    <string name="product_source_format">Source: %1$s</string>
 </resources>

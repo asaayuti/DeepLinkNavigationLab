@@ -73,8 +73,8 @@ public class ProductFragment extends Fragment {
         TextView tvProductId = view.findViewById(R.id.tvProductId);
         TextView tvSource = view.findViewById(R.id.tvSource);
 
-        tvProductId.setText("Product ID: " + productId);
-        tvSource.setText("Source: " + source);
+        tvProductId.setText(getString(R.string.product_id_format, productId));
+        tvSource.setText(getString(R.string.product_source_format, source));
 
         view.findViewById(R.id.btnBackHome)
                 .setOnClickListener(v ->

@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Page"
+        android:text="@string/home_page"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -18,12 +18,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Buka Detail Produk" />
+        android:text="@string/open_product_detail" />
 
     <Button
         android:id="@+id/btnProductNotification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test Product Notification" />
+        android:text="@string/test_product_notification" />
 
 </LinearLayout>
