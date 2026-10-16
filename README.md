@@ -145,3 +145,15 @@ Developed as a hands-on Android learning project covering deep links, navigation
 ### Notification Navigation
 
 <img src="./screenshots/notification.png" width="300" alt="Notification navigation" />
+
+## Verified Test Scenarios
+
+The release APK was manually tested on an Android emulator.
+
+| Scenario | Input | Expected result | Status |
+|---|---|---|---|
+| HTTPS Android App Link | `/product/123?source=browser` | Product ID `123`, source `browser` | Passed |
+| Custom URI scheme | `myapp://product/456?source=custom-scheme` | Product ID `456`, source `custom-scheme` | Passed |
+| Notification navigation | Product ID `888` | Product ID `888`, source `notification` | Passed |
+
+Automated validation: Android debug build, unit tests, and Android Lint via GitHub Actions.
