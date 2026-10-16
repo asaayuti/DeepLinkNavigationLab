@@ -110,6 +110,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void requestPermissionAndShowNotification() {
+        showProductNotification();
+    }
+
+    private void showProductNotification() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
                 && ContextCompat.checkSelfPermission(
                 this,
@@ -122,10 +126,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        showProductNotification();
-    }
-
-    private void showProductNotification() {
         Bundle args = new Bundle();
         args.putString("productId", "888");
         args.putString("source", "notification");

@@ -36,3 +36,9 @@ jobs:
         with:
           name: deeplinknavigationlab-debug-apk
           path: app/build/outputs/apk/debug/*.apk
+
+      - name: Run unit tests
+        run: ./gradlew --no-daemon testDebugUnitTest
+
+      - name: Run Android Lint
+        run: ./gradlew --no-daemon lintDebug
