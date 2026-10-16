@@ -135,10 +135,13 @@ Developed as a hands-on Android learning project covering deep links, navigation
 ## Screenshots
 
 ### Home Screen
-<img src="screenshots/home.png" width="300" alt="Home Screen" />
+
+<img src="./screenshots/home.png" width="300" alt="Home Screen" />
 
 ### Product Screen — Deep Link
-<img src="screenshots/product-deeplink.png" width="300" alt="Product Screen — Deep Link" />
+
+<img src="./screenshots/product-deeplink.png" width="300" alt="Product Screen showing deep link parameters" />
 
 ### Notification Navigation
-<img src="screenshots/notification.png" width="300" alt="Notification Navigation" />
+
+<img src="./screenshots/notification.png" width="300" alt="Notification navigation" />
