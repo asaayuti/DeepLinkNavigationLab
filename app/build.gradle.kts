@@ -7,6 +7,13 @@ plugins {
 
 val keyStoreProperties = Properties();
 val keyStorePropertiesFile = rootProject.file("keystore.properties")
+val hasReleaseSigning = keyStorePropertiesFile.isFile
+
+if (hasReleaseSigning) {
+    FileInputStream(keyStorePropertiesFile).use {
+        keyStoreProperties.load(it)
+    }
+}
 
 if (keyStorePropertiesFile.exists()) {
     FileInputStream(keyStorePropertiesFile).use {
@@ -31,14 +38,25 @@ android {
     }
 
     signingConfigs {
-        create("release") {
-            storeFile = file(
-                keyStoreProperties.getProperty("storeFile")
-            )
-            storePassword = keyStoreProperties.getProperty("storePassword")
-            keyAlias = keyStoreProperties.getProperty("keyAlias")
-            keyPassword = keyStoreProperties.getProperty("keyPassword")
+        if (hasReleaseSigning) {
+            create("release") {
+                storeFile = file(
+                    requireNotNull(keyStoreProperties.getProperty("storeFile")) {
+                        "Missing storeFile in keystore.properties"
+                    }
+                )
+                storePassword = requireNotNull(
+                    keyStoreProperties.getProperty("storePassword")
+                )
+                keyAlias = requireNotNull(
+                    keyStoreProperties.getProperty("keyAlias")
+                )
+                keyPassword = requireNotNull(
+                    keyStoreProperties.getProperty("keyPassword")
+                )
+            }
         }
+
     }
 
     buildTypes {
@@ -47,7 +65,9 @@ android {
                 enable = true
                 packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
             }
-            signingConfig = signingConfigs.getByName("release")
+            if (hasReleaseSigning) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
     }
     compileOptions {
